@@ -1,6 +1,7 @@
 <div class="container-fluid">
+        <!-- <form (ngSubmit)='submitGoal()' #goalForm='ngForm'> -->
     <div class="row">
-        <form #goalForm='ngForm'>
+        <form (ngSubmit)='submitGoal()' #goalForm='ngForm'>
             <!-- Name Form -->
             <div class="form-group">
                 <label for="name">Name</label>
@@ -10,6 +11,8 @@
                     <p> Name is Required</p>
                     
                 </div>
+
+                Display{{newGoal.name}}
             </div>
             <!-- Description Input -->
             <div class="form-group">

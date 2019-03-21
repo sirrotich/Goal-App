@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
 import {Goal} from '../goal'
 
 @Component({
@@ -22,25 +22,26 @@ export class GoalComponent implements OnInit {
         let toDelete=confirm(`Are you sure you want to delete ${this.goals[index].name}`)
         
         if(toDelete){
-            this.goals.splice(index,1)
+            this.goals.splice(index,1);
         }
     }
 }
-        
+
+ 
   toogleDetails(index){
       this.goals[index].showDescription = !this.goals[index].showDescription;
   }
-
-  addNewGoal(goal){
-    let goalLength = this.goals.length;
-    goal.id=goalLength+1;
-    goal.completeDate = new Date(goal.completeDate)
-    this.goals.push(goal)
-  
-  }
-
 constructor() { }
+
 ngOnInit() {
+}
+
+addNewGoal(goal){
+  let goalLength = this.goals.length;
+  goal.id=goalLength+1;
+  goal.completeDate = new Date(goal.completeDate)
+  this.goals.push(goal)
+
 }
 }
 
